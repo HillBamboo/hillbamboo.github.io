@@ -94,14 +94,17 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="拿铁轮的自留地">
+  <meta name="description" content="1. 问题描述动态前缀和维护问题。给定一个区间 $A[1..n]$, 对该区间进行如下两类操作  (前缀和查询)指定$1 \le j \le n$, 求$A[1..j]$的前缀和 (单点修改)指定$1 \le j \le n$, 令A[j] += val  分析。该问题可以通过前缀数组$arr[1..n]$完成，空间复杂度是$O(n)$, 操作一的时间复杂度是$O(1)$, 操作二的时间是$O(n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树状数组: 小而美的数据结构">
 <meta property="og:url" content="https://hillbamboo.github.io/2019/08/04/binary-index-tree/index.html">
 <meta property="og:site_name" content="拿铁轮的自留地">
+<meta property="og:description" content="1. 问题描述动态前缀和维护问题。给定一个区间 $A[1..n]$, 对该区间进行如下两类操作  (前缀和查询)指定$1 \le j \le n$, 求$A[1..j]$的前缀和 (单点修改)指定$1 \le j \le n$, 令A[j] += val  分析。该问题可以通过前缀数组$arr[1..n]$完成，空间复杂度是$O(n)$, 操作一的时间复杂度是$O(1)$, 操作二的时间是$O(n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-21T12:12:14.312Z">
+<meta property="og:updated_time" content="2019-08-21T12:20:58.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拿铁轮的自留地">
+<meta name="twitter:title" content="树状数组: 小而美的数据结构">
+<meta name="twitter:description" content="1. 问题描述动态前缀和维护问题。给定一个区间 $A[1..n]$, 对该区间进行如下两类操作  (前缀和查询)指定$1 \le j \le n$, 求$A[1..j]$的前缀和 (单点修改)指定$1 \le j \le n$, 令A[j] += val  分析。该问题可以通过前缀数组$arr[1..n]$完成，空间复杂度是$O(n)$, 操作一的时间复杂度是$O(1)$, 操作二的时间是$O(n">
 
 
 
@@ -121,7 +124,7 @@
   };
 </script>
 
-  <title> | 拿铁轮的自留地</title>
+  <title>树状数组: 小而美的数据结构 | 拿铁轮的自留地</title>
   
 
 
@@ -378,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">树状数组: 小而美的数据结构
 
               
             
@@ -419,7 +422,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-21 20:12:14" itemprop="dateModified" datetime="2019-08-21T20:12:14+08:00">2019-08-21</time>
+                <time title="修改时间：2019-08-21 20:20:58" itemprop="dateModified" datetime="2019-08-21T20:20:58+08:00">2019-08-21</time>
               </span>
             
           
@@ -453,7 +456,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">0</span>
+              <span title="本文字数">3.4k</span>
             </span>
           
 
@@ -465,7 +468,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">6 分钟</span>
             </span>
           
 
@@ -484,7 +487,53 @@
       
 
       
-        
+        <h1 id="问题描述">1. 问题描述</h1><p>动态前缀和维护问题。给定一个区间 $A[1..n]$, 对该区间进行如下两类操作</p>
+<ol>
+<li>(前缀和查询)指定$1 \le j \le n$, 求$A[1..j]$的前缀和</li>
+<li>(单点修改)指定$1 \le j \le n$, 令A[j] += val</li>
+</ol>
+<p>分析。该问题可以通过前缀数组$arr[1..n]$完成，空间复杂度是$O(n)$, 操作一的时间复杂度是$O(1)$, 操作二的时间是$O(n)$, 最坏情况是$j = n$时整个$arr[1..n]$均需要更新。树状数组能够把操作一和操作二的时间复杂度都降至$O(\log n)$, 空间是$O(n)$.</p>
+<h1 id="树状数组">2. 树状数组</h1><p>树状数组是一类巧妙利用了二进制的数据结构. 在动态前缀和维护问题中，输入$1 \le j \le n$, 若我们能从二进制的观点来看待$j$, 则$j$至多有$\log n$位. 举例, 易知 </p>
+<script type="math/tex; mode=display">j = 13_{10} = 1101_{2} = 8 + 4 + 1</script><p>从而求数组的$A$的前13项之和可以分成三步:</p>
+<script type="math/tex; mode=display">A[1..13] = A[1..8] + A[9..12] + A[13]</script><p>注意区间$A[1..8], A[9..12], A[13]$的区间大小分别就是8, 4, 1, 这对应了13的进制分解. 我们记</p>
+<script type="math/tex; mode=display">c[8] = A[1..8], c[12] = A[9..12], c[13] = A[13]</script><p>则若我们知道了数组$c[1..n]$, 则前缀和可以在$O(\log n)$时间内完成. 数组$c[1..n]$被称为树状数组. </p>
+<h2 id="树状数组的含义">2.1. 树状数组的含义</h2><p>在此之前, 首先我们来明确一下$c[j]$的含义，他是指以$A[j]$结尾的往前一段区间的和, 为了方便我们称这一段区间为$c[j]$的前缀区间. $c[j]$的前缀区间有多长？如下:</p>
+<script type="math/tex; mode=display">\left| c[j] \right|  = j\ \&\ (-j)</script><p>其中符号$\&amp;$表示按位与. 上式的实际意义是指$j$的二进制表示中最右边的1所占的权重. 举例，如$12_{10} = 1100_{2} = 8 + 4, 4 = 12\ \&amp; \ (-12)$, 则$c[12]$的前缀区间长度是4, 同理$\left | c[13] \right | = 1, \left | c[8] \right | = 8, \left | c[2] \right | = 2$. 可以看出规律，凡是$j$是2的幂次形式是$c[j]$的前缀区间长度总是j, 这是因为此时j仅有一个1.</p>
+<h2 id="前缀和查询">2.2. 前缀和查询</h2><p>首先来考察操作一:前缀和查询操作. 给定$1 \le j \le n$, 怎样使用$c[1..n]$计算得到$A[1..n]$? 仍然以$j = 13$举例,</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+A[1..13] & = A[1..8] & + A[9..12] & + A[13] \\
+         & = c[8] + & c[12] & + c[13]
+\end{aligned}</script><p>我们知道 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+13 & = 1101 + 0 = & 13\\
+& = 1100 + 1 = & 12 + 1\\
+& = 1000 + 101 = & 8 + (4 + 1) \\
+& = 0000 + 1101 = & 0 + 13
+\end{aligned}</script><p>从而我们可以通过反复抹除13的最右边的1来得到不同的$c[k]$, 将这些$c[k]$求和就是$A[1..j]$的值, 这样的$c[k]$总量不超过$\log n$, 从而我们可以在$O(\log n)$时间内完成前缀和查询. 不断抹除最右边的1可以通过<code>j -= (j &amp;  -j)</code>实现, 当然，边界条件是<code>j &gt; 0</code>.</p>
+<p>前缀和查询的完整代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// x = 1, 2, ..., n</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        ret += c[x];</span><br><span class="line">        x -= (x &amp; -x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>作为特例，对于数组$A[1..n]$的单点查询可以通过 $sum(j) - sum(j - 1)$得到$A[j]$. 查询$A$的子区间和$[lo, hi]$可以通过$sum(hi) - sum(lo - 1)$实现. 时间均是 $2 \times O(\log n)$, 渐进阶是$O(\log n)$</p>
+<h2 id="单点修改">2.3. 单点修改</h2><p>给定$1 \le j \le n$, 置 $A[j] += val$, 显然要修改$c[1..n]$中的某些值以达到动态维护区间的目的。显然$A[j]$变了, $c[j]$一定变，此外，其他所有覆盖了$A[j]$的$c[k]$均需改变，如何找到这些$c[k]$? 更直接一点，如何找了这些$k$? </p>
+<p>首先，显然这些$k \ge j$. 首先来考察一个实例$j = 3 = 0011$, 容易知道$c[3]$的前缀区间长度是1, 那么只比$j = 3$大一点点的又恰能覆盖$A[3]$的$k = ?$</p>
+<p>我们首先取出3最右边的1，其权值恰好是$w = 1$, 我们令$4 = 3 + w = 0100$, 其值恰好是$c[4]$, 容易知道$c[4]$是第一个覆盖了$A[3]$的元素，然后下一个$k$怎么求？显然$8 = 0100 + 0100 = 4 + 4$, 我们将4的最右边的1取出，其权值$w = 4$, $c[8]$是覆盖了$c[4]$的一个元素. </p>
+<p>从而，我们知道k值得计算是通过<code>j += (j &amp; -j)</code>实现的，边界是<code>j &lt;= n</code>. 再举一个实例，修改$A[13]$，对应应修改的$c[k]$是$c[13], c[14]$. 容易知道这些$c[k]$总量同样不会超过$\log n$个, 从而单点修改可以在$O(\log n)$时间内完成. 单点修改完整代码如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> j, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &lt;= n) &#123;</span><br><span class="line">        C[j] += val; </span><br><span class="line">        j += (j &amp; -j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="构建树状数组">2.4. 构建树状数组</h2><p>有了前两步的操作，构建一个树状数组十分直接</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">init(<span class="keyword">int</span>* A, <span class="keyword">int</span> n) &#123;</span><br><span class="line">    N = n + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) c[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> <span class="comment">/*注意*/</span>; i &lt; N; ++i) update(i, A[i - <span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结">3. 总结</h1><p>树状数组$C[1,\cdots,n]$是原数组$A[1,\cdots,n]$的预处理数组，其中包含了原始数组的所有信息。其主要是二进制的思想，即</p>
+<p>1.<code>sum(i)</code>. 为查询$A[1,\cdots,i]$之和，将$i$转化为二进制数，这样在不超过$\log i$次操作就能将前n个数之和统计出来。其具体实现只需一路沿<code>i -= lowbit(i)</code>计算<code>sum +=C[i]</code>即可,其中$i \gt 0$. 该算法时间是$O(\log n)$</p>
+<p>2.<code>add(i,val)</code>.进行$A[i] += val$, 同样将$i$视为二进制数，这样在不超过$\log i$次操作就能实现元素的<code>add</code>操作.其具体实现只需一路沿<code>i += lowbit(i)</code>修改<code>C[i]+=val</code>即可. 其中$i \le n$. 该算法时间是$O(\log n)$</p>
+<p>树状数组的初始化就是首先令$C[1..n]=0$, 然后依次调用<code>add(i, A[i]), i =1,2,...,n</code>.</p>
+<p>将下标看做二进制数，正是树状数组（Binary Indexed Tree）名字的由来，其中<em>Binary</em>指的是二进制而不是二叉。</p>
+<p>还有一个需要注意的是，树状数组中的$C[i] = Sum(A[i-lowbit(i)+1,\cdots, i])$, 大白话就是$C[i]$是原数组$A$中以$A[i]$结尾（包含）的前$lowbit(i)$个元素之和</p>
+<p>树状数组的优势具有以下优势</p>
+<ol>
+<li>实现简单</li>
+<li>时间常数小</li>
+<li>开了一倍空间（zkw树动态维护前缀和需要两倍空间）</li>
+</ol>
+
       
     </div>
 
@@ -551,7 +600,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://hillbamboo.github.io/2019/08/04/binary-index-tree/">https://hillbamboo.github.io/2019/08/04/binary-index-tree/</a>
+    <a href="https://hillbamboo.github.io/2019/08/04/binary-index-tree/" title="树状数组: 小而美的数据结构">https://hillbamboo.github.io/2019/08/04/binary-index-tree/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC</a> 许可协议。转载请注明出处！</li>
@@ -627,8 +676,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -730,6 +788,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-text">1. 问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树状数组"><span class="nav-text">2. 树状数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#树状数组的含义"><span class="nav-text">2.1. 树状数组的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前缀和查询"><span class="nav-text">2.2. 前缀和查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单点修改"><span class="nav-text">2.3. 单点修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建树状数组"><span class="nav-text">2.4. 构建树状数组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-text">3. 总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -765,7 +840,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">22k</span>
   
 
   
@@ -774,7 +849,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">36 分钟</span>
   
 </div>
 
