@@ -94,17 +94,17 @@
 
 
 
-  <meta name="description" content="1. 对象交互1.1. 面向对象的设计思想看问题域中包含哪些对象，他们之间的交互行为是怎样的例子：数字时钟 1.2. 关于private,public 私有的含义是对于类而言的，而不是对对象来说私有 若一个对象/函数没有private,public的访问属性限制，则这个东东被视为friendly的，即同一个包内的其他对象可以访问这一个这个成员  1.3. 包 JAVA的类管理是通过文件夹来实现的，">
+  <meta name="description" content="How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象程序设计-JAVA 学习笔记01">
-<meta property="og:url" content="https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/index.html">
+<meta property="og:title" content="动态规划初步">
+<meta property="og:url" content="https://hillbamboo.github.io/2019/07/20/dp-basic/index.html">
 <meta property="og:site_name" content="拿铁轮的自留地">
-<meta property="og:description" content="1. 对象交互1.1. 面向对象的设计思想看问题域中包含哪些对象，他们之间的交互行为是怎样的例子：数字时钟 1.2. 关于private,public 私有的含义是对于类而言的，而不是对对象来说私有 若一个对象/函数没有private,public的访问属性限制，则这个东东被视为friendly的，即同一个包内的其他对象可以访问这一个这个成员  1.3. 包 JAVA的类管理是通过文件夹来实现的，">
+<meta property="og:description" content="How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T06:57:49.840Z">
+<meta property="og:updated_time" content="2019-08-21T12:17:20.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象程序设计-JAVA 学习笔记01">
-<meta name="twitter:description" content="1. 对象交互1.1. 面向对象的设计思想看问题域中包含哪些对象，他们之间的交互行为是怎样的例子：数字时钟 1.2. 关于private,public 私有的含义是对于类而言的，而不是对对象来说私有 若一个对象/函数没有private,public的访问属性限制，则这个东东被视为friendly的，即同一个包内的其他对象可以访问这一个这个成员  1.3. 包 JAVA的类管理是通过文件夹来实现的，">
+<meta name="twitter:title" content="动态规划初步">
+<meta name="twitter:description" content="How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/">
+  <link rel="canonical" href="https://hillbamboo.github.io/2019/07/20/dp-basic/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>面向对象程序设计-JAVA 学习笔记01 | 拿铁轮的自留地</title>
+  <title>动态规划初步 | 拿铁轮的自留地</title>
   
 
 
@@ -364,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/">
+    <link itemprop="mainEntityOfPage" href="https://hillbamboo.github.io/2019/07/20/dp-basic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="拿铁轮">
@@ -381,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">面向对象程序设计-JAVA 学习笔记01
+          <h2 class="post-title" itemprop="name headline">动态规划初步
 
               
             
@@ -407,7 +407,7 @@
                 
               
 
-              <time title="创建时间：2017-05-01 19:07:43" itemprop="dateCreated datePublished" datetime="2017-05-01T19:07:43+08:00">2017-05-01</time>
+              <time title="创建时间：2019-07-20 19:33:29" itemprop="dateCreated datePublished" datetime="2019-07-20T19:33:29+08:00">2019-07-20</time>
             </span>
           
 
@@ -422,7 +422,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-17 14:57:49" itemprop="dateModified" datetime="2019-07-17T14:57:49+08:00">2019-07-17</time>
+                <time title="修改时间：2019-08-21 20:17:20" itemprop="dateModified" datetime="2019-08-21T20:17:20+08:00">2019-08-21</time>
               </span>
             
           
@@ -456,7 +456,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">317</span>
+              <span title="本文字数">1.1k</span>
             </span>
           
 
@@ -468,7 +468,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">2 分钟</span>
             </span>
           
 
@@ -487,19 +487,55 @@
       
 
       
-        <h1 id="对象交互">1. 对象交互</h1><h2 id="面向对象的设计思想">1.1. 面向对象的设计思想</h2><p>看问题域中包含哪些对象，他们之间的交互行为是怎样的<br>例子：数字时钟</p>
-<h2 id="关于private-public">1.2. 关于private,public</h2><ul>
-<li>私有的含义是对于类而言的，而不是对对象来说私有</li>
-<li>若一个对象/函数没有private,public的访问属性限制，则这个东东被视为friendly的，即同一个包内的其他对象可以访问这一个这个成员</li>
+        <p>How should I explain dynamic programming to a 4 year old?</p>
+<blockquote>
+<p>writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper*</p>
+<p>“What’s that equal to?”</p>
+<p>(<strong>counting</strong>…) “Eight!”</p>
+<p>writes down another “1+” on the left*</p>
+<p>“What about that?”</p>
+<p>(<strong>quickly</strong>…) “Nine!”</p>
+<p>“How’d you know it was nine so fast?”</p>
+<p>“You just added one more”</p>
+<p>“So you didn’t need to recount because you remembered there &gt; were eight! Dynamic Programming is just a fancy way to say &gt; ‘remembering stuff to save time later’”</p>
+</blockquote>
+<p>三大算法思路: 搜索，贪心，dp，分治</p>
+<p>fib数列<br>青蛙跳<br>变态青蛙跳<br>挖金矿<br>花瓶美学<br>数字三角形<br>背包九问<br>最长公共子序列<br>单源最短路径问题</p>
+<blockquote>
+<p>当你企图使用计算机解决一个问题是，其实就是在思考如何将这个问题表达成状态（用哪些变量存储哪些数据）以及如何在状态中转移（怎样根据一些变量计算出另一些变量）。所以所谓的空间复杂度就是为了支持你的计算所必需存储的状态最多有多少，所谓时间复杂度就是从初始状态到达最终状态中间需要多少步！</p>
+<p>每个阶段只有一个状态-&gt;递推</p>
+<p>每个阶段的最优状态都是由上一个阶段的最优状态得到的-&gt;贪心</p>
+<p>每个阶段的最优状态是由之前所有阶段的状态的组合得到的-&gt;搜索</p>
+<p>每个阶段的最优状态可以从之前某个阶段的某个或某些状态直接得到而不管之前这个状态是如何得到的-&gt;动态规划。</p>
+</blockquote>
+<p>三要素</p>
+<ul>
+<li>最优子结构</li>
+<li>状态转移方程</li>
+<li>边界</li>
 </ul>
-<h2 id="包">1.3. 包</h2><ul>
-<li>JAVA的类管理是通过文件夹来实现的，简单来说，就是一个文件夹就是一个包，里面的若干个JAVA文件就同属于这个包的。</li>
-<li>full name vs. given name</li>
+<p>四步走</p>
+<ol>
+<li>划分阶段</li>
+<li>确定状态</li>
+<li>寻找最优子结构<ul>
+<li>(从特例出发考虑最优子结构)</li>
+<li>考虑最优子结构的一般情况，注意考虑周全</li>
 </ul>
-<h2 id="类对象和类函数">1.4. 类对象和类函数</h2><ul>
-<li>简单来说，就是加了static修饰符的对象和函数</li>
-<li>类对象和类函数只能被同级对象/函数访问，无法被对象变量/对象函数访问</li>
-</ul>
+</li>
+<li>写出状态转移方程和边界情况(平凡/退化情况), 注意边界不要写漏</li>
+</ol>
+<p>三步走</p>
+<ol>
+<li>划分阶段</li>
+<li>考虑平凡情况，如当数组长度为0时</li>
+<li>考虑一般情况， 如规模为i的问题已解决，如何基于此求解规模为i+1的问题</li>
+</ol>
+<p>1-&gt;2-&gt;3-&gt;4, 1-&gt;4-&gt;2-&gt;3</p>
+<h1 id="参考资源">1. 参考资源</h1><p><a href="https://www.quora.com/How-should-I-explain-dynamic-programming-to-a-4-year-old" target="_blank" rel="noopener"><i class="fa fa-book"></i> How should I explain dynamic programming to a 4-year-old?</a></p>
+<p><a href="https://www.zhihu.com/question/23995189/answer/35429905" target="_blank" rel="noopener"><i class="fa fa-book"></i> 知乎</a></p>
+<p><a href="https://www.zhihu.com/question/39948290/answer/612439961" target="_blank" rel="noopener"><i class="fa fa-book"></i> 知乎</a></p>
+<p><a href="https://www.cnblogs.com/caiyishuai/p/9047991.html" target="_blank" rel="noopener"><i class="fa fa-book"></i> 知乎</a></p>
 
       
     </div>
@@ -567,7 +603,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/" title="面向对象程序设计-JAVA 学习笔记01">https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/</a>
+    <a href="https://hillbamboo.github.io/2019/07/20/dp-basic/" title="动态规划初步">https://hillbamboo.github.io/2019/07/20/dp-basic/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC</a> 许可协议。转载请注明出处！</li>
@@ -587,8 +623,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/29/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/07/17/naive-bayes/" rel="next" title="机器学习算法: 朴素贝叶斯篇">
+                <i class="fa fa-chevron-left"></i> 机器学习算法: 朴素贝叶斯篇
               </a>
             
           </div>
@@ -597,8 +633,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/03/thu-java-notes-01/" rel="prev" title="thu-java-notes-01">
-                thu-java-notes-01 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/29/disjoin-set/" rel="prev" title="三行并查集">
+                三行并查集 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -765,7 +801,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对象交互"><span class="nav-text">1. 对象交互</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象的设计思想"><span class="nav-text">1.1. 面向对象的设计思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于private-public"><span class="nav-text">1.2. 关于private,public</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包"><span class="nav-text">1.3. 包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类对象和类函数"><span class="nav-text">1.4. 类对象和类函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-text">1. 参考资源</span></a></li></ol></div>
             
 
           </div>
