@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hillbamboo.github.io/"/>
-  <updated>2019-08-20T12:41:46.332Z</updated>
+  <updated>2019-08-21T12:26:25.804Z</updated>
   <id>https://hillbamboo.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hillbamboo.github.io/2019/08/20/git-cannot-display-chinese/"/>
     <id>https://hillbamboo.github.io/2019/08/20/git-cannot-display-chinese/</id>
     <published>2019-08-20T12:37:14.000Z</published>
-    <updated>2019-08-20T12:41:46.332Z</updated>
+    <updated>2019-08-21T12:26:25.804Z</updated>
     
     <summary type="html">
     
@@ -34,6 +34,8 @@
     </summary>
     
     
+      <category term="git" scheme="https://hillbamboo.github.io/tags/git/"/>
+    
   </entry>
   
   <entry>
@@ -41,7 +43,7 @@
     <link href="https://hillbamboo.github.io/2019/08/14/ml-learning-interview/"/>
     <id>https://hillbamboo.github.io/2019/08/14/ml-learning-interview/</id>
     <published>2019-08-14T05:26:36.000Z</published>
-    <updated>2019-08-21T12:19:46.787Z</updated>
+    <updated>2019-08-21T12:26:56.337Z</updated>
     
     <summary type="html">
     
@@ -52,6 +54,8 @@
     
     </summary>
     
+    
+      <category term="ml" scheme="https://hillbamboo.github.io/tags/ml/"/>
     
   </entry>
   
@@ -82,19 +86,21 @@
     <link href="https://hillbamboo.github.io/2019/07/29/disjoin-set/"/>
     <id>https://hillbamboo.github.io/2019/07/29/disjoin-set/</id>
     <published>2019-07-29T13:45:01.000Z</published>
-    <updated>2019-08-21T12:20:12.441Z</updated>
+    <updated>2019-08-21T12:26:09.544Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;三行并查集&quot;&gt;1. 三行并查集&lt;/h1&gt;&lt;p&gt;并查集是一种简洁而优雅的数据结构，能够在$O(1)$的时间内实现对集合的查询和合并操作。&lt;/p&gt;
+        &lt;h1 id=&quot;三行并查集&quot;&gt;1. 三行并查集&lt;/h1&gt;&lt;p&gt;并查集是一种简洁而优雅的数据结构，能够在O(1)的时间内实现对集合的查询和合并操作。&lt;/p&gt;
 &lt;p&gt;并查集的代码十分简洁，总共就三行&lt;/p&gt;
-&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table
+&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;
       
     
     </summary>
     
+    
+      <category term="algos, data-structure" scheme="https://hillbamboo.github.io/tags/algos-data-structure/"/>
     
   </entry>
   
@@ -103,7 +109,7 @@
     <link href="https://hillbamboo.github.io/2019/07/20/dp-basic/"/>
     <id>https://hillbamboo.github.io/2019/07/20/dp-basic/</id>
     <published>2019-07-20T11:33:29.000Z</published>
-    <updated>2019-08-21T12:17:20.779Z</updated>
+    <updated>2019-08-21T12:26:17.595Z</updated>
     
     <summary type="html">
     
@@ -118,6 +124,8 @@
     </summary>
     
     
+      <category term="algos" scheme="https://hillbamboo.github.io/tags/algos/"/>
+    
   </entry>
   
   <entry>
@@ -125,7 +133,7 @@
     <link href="https://hillbamboo.github.io/2019/07/17/naive-bayes/"/>
     <id>https://hillbamboo.github.io/2019/07/17/naive-bayes/</id>
     <published>2019-07-17T01:33:40.000Z</published>
-    <updated>2019-07-18T09:41:34.119Z</updated>
+    <updated>2019-08-21T12:27:08.190Z</updated>
     
     <summary type="html">
     
@@ -134,6 +142,8 @@
     </summary>
     
     
+      <category term="ml, algos" scheme="https://hillbamboo.github.io/tags/ml-algos/"/>
+    
   </entry>
   
   <entry>
@@ -141,7 +151,7 @@
     <link href="https://hillbamboo.github.io/2019/06/01/learn-xgb/"/>
     <id>https://hillbamboo.github.io/2019/06/01/learn-xgb/</id>
     <published>2019-06-01T08:23:53.000Z</published>
-    <updated>2019-06-01T09:01:24.559Z</updated>
+    <updated>2019-08-22T09:20:55.909Z</updated>
     
     <summary type="html">
     
@@ -178,11 +188,11 @@
   </entry>
   
   <entry>
-    <title>剑指offter笔记</title>
+    <title>剑指offter读书笔记</title>
     <link href="https://hillbamboo.github.io/2019/03/03/sword-to-offer/"/>
     <id>https://hillbamboo.github.io/2019/03/03/sword-to-offer/</id>
     <published>2019-03-03T07:21:26.000Z</published>
-    <updated>2019-07-17T08:14:59.549Z</updated>
+    <updated>2019-08-21T12:27:57.484Z</updated>
     
     <summary type="html">
     
@@ -207,7 +217,7 @@
     <link href="https://hillbamboo.github.io/2019/02/27/heap-heapsort/"/>
     <id>https://hillbamboo.github.io/2019/02/27/heap-heapsort/</id>
     <published>2019-02-27T06:26:04.000Z</published>
-    <updated>2019-07-17T07:14:09.203Z</updated>
+    <updated>2019-08-21T12:26:46.401Z</updated>
     
     <summary type="html">
     
@@ -215,6 +225,8 @@
     
     </summary>
     
+    
+      <category term="algos, data-structure" scheme="https://hillbamboo.github.io/tags/algos-data-structure/"/>
     
   </entry>
   

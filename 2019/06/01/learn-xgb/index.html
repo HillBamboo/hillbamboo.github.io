@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="拿铁轮的自留地">
 <meta property="og:description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 0.1. 基本推导GBDT的基本形式：  0.2. XGB  J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\ri">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-01T09:01:24.559Z">
+<meta property="og:updated_time" content="2019-08-22T09:20:55.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learn-xgb">
 <meta name="twitter:description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 0.1. 基本推导GBDT的基本形式：  0.2. XGB  J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\ri">
@@ -407,13 +407,23 @@
                 
               
 
-              <time title="创建时间：2019-06-01 16:23:53 / 修改时间：17:01:24" itemprop="dateCreated datePublished" datetime="2019-06-01T16:23:53+08:00">2019-06-01</time>
+              <time title="创建时间：2019-06-01 16:23:53" itemprop="dateCreated datePublished" datetime="2019-06-01T16:23:53+08:00">2019-06-01</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-22 17:20:55" itemprop="dateModified" datetime="2019-08-22T17:20:55+08:00">2019-08-22</time>
+              </span>
             
           
 
@@ -686,7 +696,17 @@ $$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gam
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1328,6 +1348,46 @@ show_date_time();
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

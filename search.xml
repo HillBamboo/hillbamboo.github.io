@@ -4,11 +4,17 @@
     <title><![CDATA[Git for Windows 无法显示中文]]></title>
     <url>%2F2019%2F08%2F20%2Fgit-cannot-display-chinese%2F</url>
     <content type="text"><![CDATA[git for windows 无法显示中文，这个问题之前碰到过两次。解决方案如下： 12345git config --global core.quotepath false git config --global gui.encoding utf-8 git config --global i18n.commit.encoding utf-8 git config --global i18n.logoutputencoding utf-8 export LESSCHARSET=utf-8 参考资料 解决 Git 在 windows 下中文乱码的问题]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[机器学习常见面试题]]></title>
     <url>%2F2019%2F08%2F14%2Fml-learning-interview%2F</url>
     <content type="text"><![CDATA[0.0.1. Q1: 请简述logit回归？0.0.2. A1: 关键词：线性模型，最大化似然，梯度下降。逻辑回归本质上是一种线性模型，可以看做是线性回归之后套上一个sigmoid函数，不同在于逻辑回归是用于分类。逻辑回归假设数据是服从二项分布的（类似地，多项式回归假设数据服从多项式分布，泊松回归假设数据服从泊松分布，负二项回归假设数据服从负二项分布）。逻辑回归的优化策略是对训练集进行极大似然估计。最小化交叉熵损失等于极大化似然。常用梯度下降进行极大似然估计，当然也可以使用牛顿法等二阶优化方法。逻辑回归的优势在于，简单，快速，可解释性强。模型中每一个特征的系数都对应着该特征的重要程度。推导逻辑回归模型时可能需要向量化，这个也要熟悉一下。]]></content>
+      <tags>
+        <tag>ml</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[树状数组: 小而美的数据结构]]></title>
@@ -18,17 +24,26 @@
   <entry>
     <title><![CDATA[三行并查集]]></title>
     <url>%2F2019%2F07%2F29%2Fdisjoin-set%2F</url>
-    <content type="text"><![CDATA[1. 三行并查集并查集是一种简洁而优雅的数据结构，能够在$O(1)$的时间内实现对集合的查询和合并操作。 并查集的代码十分简洁，总共就三行 123Init(n) &#123; for(int i = 0; i &lt; n; ++i) root[i] = i;&#125;Find(x) &#123; return x == root[x] ? x : root[x] = find(root[x]); &#125;Union(x, y) &#123;root[find(x)] = find(y); &#125; 其中root[i]表示元素i的父节点 2. 路径压缩注意Find函数中使用的是递归调用, 其中将递归调用后得返回值重新赋值给root[x], 这是做法称为 路径压缩, 为了防止反复对集合进行合并后并查集退化成一条链，从而时间复杂度退化成线性时间所做的优化，注意无路径压缩的写法如下 1x == root[x] ? x : find(root[x]) 这c/c++用这种写法很OK，但是用python写，最少都要用两行 12if root[x] != x: root[x] = find(root[x])return root[x] 用下面的这种写法是不行的:1return x if root[x] == x else root[x] = find(root[x]) 此外，路径压缩自然可以改写成非递归形式，做法很简单，下文略。 3. 按秩归并Union操作还可以进行按秩归并的优化. 首先介绍集合的rank的概念。 在并查集中，一个集合用一棵树表示，这棵树的深度就是该集合的rank，树越深rank越大. 容易知道rank越低find操作越高效，这也是路径压缩所追求的。按秩归并的思路是将rank低的集合并入到rank高的集合，这样可以延缓并查集变成一条链的情形，从而提高Find的效率. 若不是将小rank集合归如大rank结合，合并后的新集合的rank总会增长，最终rank=集合元素个数时，find操作是线性的。注意，为了实现按秩归并，我们仅需要多维护一个rank数组即可，足够简单。 加上了按秩归并优化的Union函数长成下面这个样子 1234567void Union(x, y) &#123; int xr = find(x), yr = find(y); if (rank[xr] &lt;= rank[yr]) &#123; root[xr] = yr; if (rank[xr] == rank[yr]) ++rank[yr]; &#125; else root[yr] = xr; 按秩归并算法多了几行，为了偷懒有时随便Union也OK. 不超时就好. 讲究一点的就按秩归并吧. 4. 练习题 leetcode 200 leetcode 547 leetcode 684 leetcode 959 leetcode 990 5. 后续可持久化并查集？等我学会了再写吧~~~]]></content>
+    <content type="text"><![CDATA[1. 三行并查集并查集是一种简洁而优雅的数据结构，能够在O(1)的时间内实现对集合的查询和合并操作。 并查集的代码十分简洁，总共就三行 123Init(n) &#123; for(int i = 0; i &lt; n; ++i) root[i] = i;&#125;Find(x) &#123; return x == root[x] ? x : root[x] = find(root[x]); &#125;Union(x, y) &#123;root[find(x)] = find(y); &#125; 其中root[i]表示元素i的父节点 2. 路径压缩注意Find函数中使用的是递归调用, 其中将递归调用后得返回值重新赋值给root[x], 这是做法称为 路径压缩, 为了防止反复对集合进行合并后并查集退化成一条链，从而时间复杂度退化成线性时间所做的优化，注意无路径压缩的写法如下 1x == root[x] ? x : find(root[x]) 这c/c++用这种写法很OK，但是用python写，最少都要用两行 12if root[x] != x: root[x] = find(root[x])return root[x] 用下面的这种写法是不行的:1return x if root[x] == x else root[x] = find(root[x]) 此外，路径压缩自然可以改写成非递归形式，做法很简单，下文略。 3. 按秩归并Union操作还可以进行按秩归并的优化. 首先介绍集合的rank的概念。 在并查集中，一个集合用一棵树表示，这棵树的深度就是该集合的rank，树越深rank越大. 容易知道rank越低find操作越高效，这也是路径压缩所追求的。按秩归并的思路是将rank低的集合并入到rank高的集合，这样可以延缓并查集变成一条链的情形，从而提高Find的效率. 若不是将小rank集合归如大rank结合，合并后的新集合的rank总会增长，最终rank=集合元素个数时，find操作是线性的。注意，为了实现按秩归并，我们仅需要多维护一个rank数组即可，足够简单。 加上了按秩归并优化的Union函数长成下面这个样子 1234567void Union(x, y) &#123; int xr = find(x), yr = find(y); if (rank[xr] &lt;= rank[yr]) &#123; root[xr] = yr; if (rank[xr] == rank[yr]) ++rank[yr]; &#125; else root[yr] = xr; 按秩归并算法多了几行，为了偷懒有时随便Union也OK. 不超时就好. 讲究一点的就按秩归并吧. 4. 练习题 leetcode 200 leetcode 547 leetcode 684 leetcode 959 leetcode 990 5. 后续可持久化并查集？等我学会了再写吧~~~]]></content>
+      <tags>
+        <tag>algos, data-structure</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[动态规划初步]]></title>
     <url>%2F2019%2F07%2F20%2Fdp-basic%2F</url>
     <content type="text"><![CDATA[How should I explain dynamic programming to a 4 year old? writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What about that?” (quickly…) “Nine!” “How’d you know it was nine so fast?” “You just added one more” “So you didn’t need to recount because you remembered there &gt; were eight! Dynamic Programming is just a fancy way to say &gt; ‘remembering stuff to save time later’” 三大算法思路: 搜索，贪心，dp，分治 fib数列青蛙跳变态青蛙跳挖金矿花瓶美学数字三角形背包九问最长公共子序列单源最短路径问题 当你企图使用计算机解决一个问题是，其实就是在思考如何将这个问题表达成状态（用哪些变量存储哪些数据）以及如何在状态中转移（怎样根据一些变量计算出另一些变量）。所以所谓的空间复杂度就是为了支持你的计算所必需存储的状态最多有多少，所谓时间复杂度就是从初始状态到达最终状态中间需要多少步！ 每个阶段只有一个状态-&gt;递推 每个阶段的最优状态都是由上一个阶段的最优状态得到的-&gt;贪心 每个阶段的最优状态是由之前所有阶段的状态的组合得到的-&gt;搜索 每个阶段的最优状态可以从之前某个阶段的某个或某些状态直接得到而不管之前这个状态是如何得到的-&gt;动态规划。 三要素 最优子结构 状态转移方程 边界 四步走 划分阶段 确定状态 寻找最优子结构 (从特例出发考虑最优子结构) 考虑最优子结构的一般情况，注意考虑周全 写出状态转移方程和边界情况(平凡/退化情况), 注意边界不要写漏 三步走 划分阶段 考虑平凡情况，如当数组长度为0时 考虑一般情况， 如规模为i的问题已解决，如何基于此求解规模为i+1的问题 1-&gt;2-&gt;3-&gt;4, 1-&gt;4-&gt;2-&gt;3 1. 参考资源 How should I explain dynamic programming to a 4-year-old? 知乎 知乎 知乎]]></content>
+      <tags>
+        <tag>algos</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[机器学习算法: 朴素贝叶斯篇]]></title>
     <url>%2F2019%2F07%2F17%2Fnaive-bayes%2F</url>
     <content type="text"><![CDATA[朴素贝叶斯是一类很简单的分类算法, 应用场景较多, 如垃圾邮件分类, 输入法中的拼写检查, 文本情感分类等等. 初学朴素贝叶斯时被”朴素”二字迷惑, 认为之所以称之为 “朴素” 时因为算法很 “简单”, 很naive. 实际上, “朴素” 更准确的含义是（特征间的）条件独立性假设, 由于这一假设使得这个算法很 “naive”, 他的引入是为了简化后验概率的计算. 学习算法不能走马观花, 浅尝辄止, 还是得花时间好好琢磨. 1. 贝叶斯公式先补充贝叶斯公式作为预备知识.贝叶斯公式形如下式： 其中$\mathbb{x}$表示样本, $c$表示类别, 贝叶斯公式给出了样本与类别之间的生成关系.更通俗地讲, 假设给定未知样本$\mathbb{x}$, $c$的可能取值是 ${0, 1, 2, \cdots, k}$, 则概率 Pr(c=j|\mathbb{x}) = \frac{Pr(\mathbb{x}|c=j) \times Pr(c = j)}{Pr(\mathbb{x})}, \ j=0, 1, \cdots, k2. 朴素贝叶斯算法朴素贝叶斯模型是一类生成模型, 它的生成关系有贝叶斯公式给出, 模型的训练是通过最大化后验概率实现的. 2.1. 模型假设朴素贝叶斯算法的前提假设是特征之间的条件独立性, 即：给定样本$\mathbb{x}=(x_1, x_2, \cdots, x_n)$, 其中$x_i$为第$i$个特征, 则 Pr(\mathbb{x}|c=j) = Pr(c=j) \times \prod\limits_{i}Pr(x_i|c=j)2.2. 算法推导由贝叶斯公式可知 Pr(c=j|\mathbb{x}) = \frac{Pr(\mathbb{x}|c=j) \times Pr(c = j)}{Pr(\mathbb{x})}, \ j=0, 1, \cdots, k由于对于同一个样本, $Pr(\mathbb{x})$取值总是相同的, 从而 \begin{aligned} j^{*} &= \mathop{\arg\max}\limits_{j} \frac{Pr(c = j) \times \prod\limits_{i}Pr(x_i|c = j)}{Pr(\mathbb{x})} \\ & = \mathop{\arg\max}\limits_{j} Pr(c = j) \times \prod\limits_{i}Pr(x_i|c = j) \end{aligned}其中, $j^{*}$即为样本$\mathbb{x}$的预测类别 2.3. 算法流程朴素贝叶斯算法的训练过程就是一个”计数”过程. 具体来说, 它对训练集统计下列两类概率 先验概率（类概率） Pr(c = j) = \frac{\left| D_{c=j}\right|}{\left| D\right|}, 其中 $\left| D_{c=j}\right|$ 为数据集中的类别 $j$所占的数目, $\left| D\right|$为数据集的大小 条件概率（似然） Pr(x_i|c = j) = \begin{cases} \frac{\left| D_{x_i, c=j} \right| }{\left| D_{c} \right| }, & 若\ x\ 离散, \\ \frac{1}{\sigma \sqrt{2\pi}}\cdot \exp\left( -\frac{\left( x_i - \mu\right)^2}{2\sigma^2}\right), & 若\ x\ 连续, \end{cases}其中$\left| D_{x_i, c=j} \right|$为类别是$j$且取值为$x_i$的样本数量. $\mu, \sigma$分别是特征$x_i$的均值与方差 朴素贝叶斯算法的整体流程如下图所示: 2.4. 注意项 条件概率连乘积下溢. 若特征数量很多, 则 \prod\limits_{i}Pr(x_i|c=j)越接近0. 这种现象称为乘法下溢. 为改进之, 可使用对数似然, 即计算 LL\left( \mathbb{x}|c= j\right) = \log(Pr(c=j)) + \sum\limits_{i}\log(Pr(x_i|c=j)) 未登录词. 若带预测样本中出现了训练集中从未出现过的特征取值, 则后验概率总为0, 为了克服这一点, 可以引入拉普拉斯平滑, 即计算 \hat {Pr}(c = j) = \frac{\left| D_{c=j}\right| + \lambda}{\left| D\right| + N_j \cdot \lambda} \\ \hat {Pr}(\mathbb{x}) = \frac{\left| D_{x_i, c=j} \right| + \lambda}{\left| D_{c} \right| + N_{i} \cdot \lambda}其中, $N_j$为类别$j$的数量, $N_{i}$为特征$x_i$的可能取值数目, $\lambda$为大于0的常数, 常取值为1 3. 总结 朴素贝叶斯算法的主要优点： 对小规模的数据表现很好, 能个处理多分类任务, 适合增量式训练, 尤其是数据量超出内存时, 我们可以一批批的去增量训练. 对缺失数据不太敏感, 常用于文本分类 不受特征尺度的影响, 由于训练过程就是计数的过程, 从而无需归一化等操作 朴素贝叶斯的主要缺点： 需要知道先验概率, 且先验概率很多时候取决于假设, 假设的模型可以有很多种, 因此在某些时候会由于假设的先验模型的原因导致预测效果不佳 由于我们是通过先验和数据来决定后验的概率从而决定分类, 所以分类决策存在一定的错误率 使用朴素贝叶斯算法时的注意点： 贝叶斯分类器与一般意义上的”贝叶斯学习”不同, 前者是通过最大后验概率进行单点估计, 后者是进行分布估计 没有平滑之前的朴素贝叶斯算法使用的是极大似然估计, 属于频率派, 平滑之后的进行的是贝叶斯估计, 属于贝叶斯学派 使用对数似然和拉普拉斯平滑是两种不错的改进方式 4. 参考资源 周志华, 机器学习 朴素贝叶斯算法原理小结 算法杂货铺——分类算法之朴素贝叶斯分类(Naive Bayesian classification)]]></content>
+      <tags>
+        <tag>ml, algos</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[learn-xgb]]></title>
@@ -41,7 +56,7 @@
     <content type="text"><![CDATA[1. 安装jupyter notebook 插件 table of content 用于为长文本生成目录 一些color scheme, background image 之类 2. 安装jupyter lab 为jupyter lab 安装插件 pixiedust: IBM的notebook debugger 安装 jupyterlab-variableInspector 用于更快捷地观察变量, 妈妈再也不用担心我整天print变量了]]></content>
   </entry>
   <entry>
-    <title><![CDATA[剑指offter笔记]]></title>
+    <title><![CDATA[剑指offter读书笔记]]></title>
     <url>%2F2019%2F03%2F03%2Fsword-to-offer%2F</url>
     <content type="text"><![CDATA[1. 面试流程 电话面试 远程面试 现场面试 在电话面试中，要用尽可能简洁和形象化的语言讲述问题； 在远程面试中，重点考察的是编码的能力，要注意以下三点： 想清楚再写 使用单元测试 注意代码风格在编码之前，应该先写写单元测试（或构造一些边界情况） 现场面应该注意： 提前规划好路线及估算好时间，预留30min作缓冲 提前追备好几个问题问面试官 2. 一场面试中的环节 自我介绍 (30s - 1min) 项目经历 (5min - 10min) 技术考察 (40min - 50min) 应聘者提问 (~5min) 2.1. 自我介绍暖场用 2.2. 项目经历建议使用以下的框架讲述自己的项目经历 Situation (简述项目的背景，如规模，功能，目标群体等等) Task (已完成的任务，注意用词：参与 vs 负责) Action (做了什么工作，怎么做的) Result (自己的贡献，完成了多少的功能，做了多少的优化，提升了多少的功能) 常见套路： 项目中遇到的最大的问题是什么？如何克服的？ 从这个项目中学到了什么？ 团队协作中遇到过什么问题？如何解决的？ 为什么跳槽/为什么选择与本专业不同的职业？ 回答为什么跳槽这类的问题，模板：在原来的工作岗位上没有了激情，寻求新环境改变、提升自己. 比如说自己在原工作上做了好多年，技能上没有了上升的空间，寻找一家新的公司获得提升. 2.3. 技术考察通常是题目的考察。一定要注意，在写代码之前先和面试官沟通好，明确题意是什么，再讲述自己的解题思路，还要说说自己构造的测试用例，体现自己思考问题的严谨性与全面性。 2.4. 应聘者提问不要问什么公司未来的发展战略的问题，作为一线的开发者，问问关于自身岗位的问题，也不要去谈薪资，谈你是否会给我offer之类的问题. 3. 面试能力的考察 沟通能力 学习能力 在沟通能力中，常见的套路是面试官提出一个描述并不清楚的问题，试图让面试者通过反复的沟通理解题意。从而，面试者要有主动沟通的意识在考察学习能力方面，常见的两个套路：1. 最近在看什么书或项目？2. 试图让面试者解决他所不熟悉的领域问题，或者一个新概念，让面试者试图解决问题。沟通能力和学习能力的考察常常交织在一起，要注意灵活应对。 4. 总结 主动沟通意识 想清楚再写 先和面试官讲清楚解题的思路 进行单元测试 5. 参考资料 何海涛. 剑指offer第二版]]></content>
   </entry>
@@ -49,6 +64,9 @@
     <title><![CDATA[堆与堆排序]]></title>
     <url>%2F2019%2F02%2F27%2Fheap-heapsort%2F</url>
     <content type="text"><![CDATA[作为三大经典排序算法的堆排序，借助了堆这种精巧的数据结构，实现了排序. 理解了堆结构，再理解堆排序就不难了. 堆排序中三点要重点掌握： 怎样通过下标找到节点的父节点及子节点 建堆算法 堆调整算法 1. 什么是堆堆是一种数据结构，能够支持高效的操作.堆得一种经典实现是使用完全二叉树，这种实现也被称为完全二叉堆.事实上，堆的树结构只是它的一种逻辑结构，也就是画在纸的，在我们脑海中想象出来的，实际内存中的物理结构，常常是使用数组. 有时候堆也被称为优先级队列，这是它的逻辑上的名字，别人用起来就好像是这种结构具有某种优先级.一般来说，堆分两种: 大根堆和小根堆.作为一种数据结构，考察堆的增删改查操作.修改在堆中并不常见，忽略. 查找操作也只限定在查找最大值/最小值上. 增加操作通常加在堆的最后，删除操作通常删除根节点. 2. 堆与数组的转化堆结构和数组具有很好的对应，即给定一个规模为n的二叉堆，给堆得层序遍历序列对应的就是一个数组，大小同样为n. 从而，有了一个数组，就能把这个数组当成堆来用.使用三个公式即可找到任意节点i的父节点，左节点和右节点（如果有的话）. 假设大小为n的数组arr，下标记为$i = 0, 1, \cdots, n - 1$, 则其左节点的下标为 $2 \cdot i + 1$, 其右节点（如果有）的下标为 $2 \cdot i + 2$, 对于下标为j的节点，其父节点的下标为 $(j - 1) / 2$, 注意当$j = 0$ 时 其父节点时自身，$(0 - 1) / 2 = 0$ 不会越界. 3. 建堆与维护堆堆中，最重要的两种操作是：建堆和维护堆.建堆是指给定一组数据，比如就是一个数组，通过某种算法将其调整为一个堆（调整操作也就是调整数组中元素的位置）；维护堆是指当增删后的堆不再是一个堆时，用某种算法将其再次调整为一个合法的堆.一个合法的堆是指该堆满足堆序性，对于大根堆，堆序性是指根节点是堆中最大值，对于小根堆，定义类似. 已知对于一棵高度为h的满二叉树，其规模$n = 2^{(h + 1)}- 1$, 即 $h = O(\log n)$， 下面讨论建堆算法和堆调整算法. 3.1. 建堆3.1.1. 最开始的思路任意给定一个大小为n的数组，从零位置的元素出发，即从空堆出发，不断将新元素加入堆中，堆的增加操作复杂度为O(logn), 从而要建立一个大小为n的堆，复杂度为： \log 1 + \log 2 + ... + \log n = O(n\log n)更细致的复杂度分析，假定一个规模为n的堆高度是h, 则该堆中第i层的节点个数是2^i, 其中 0 &lt;= i &lt; h, 建堆需要每一个元素i都上溯，则复杂度： 1 \cdot 2^1 + 2 \cdot 2^2 + ... + h \cdot 2^h = O(n \log n)3.1.2. Floyd算法算法一过于复杂，建堆就需要O(nlogn)，还不如使用快排或归排.我们需要一个更高效的算法. 从相反的思路考虑，假设堆已经建好了，我们需要做的是调整堆，即下沉操作.时间复杂度： (h - 1) \cdot 2^1 + (h - 2) \cdot 2^2 + ... + (h - h) \cdot 2^h = O(n)Done! 3.2. 维护堆堆的维护发生在增加或删除操作之后. 对于增加操作，新元素被添加至树的最后一层，最坏情况下该元素需要O(logn)次操作上溯至根节点的位置，才能保证对的合法性；对于删除操作，根节点被删除，堆的最后一个节点被移至根节点的位置，最多需要O(logn)次操作下沉至最后一层，才能保证新堆的合法性. 综上，堆的调整算法复杂度是O(logn). 4. 堆排序有了堆结构，排序就变得很简单了.只需O(1)的辅助空间，O(nlogn)的时间就能实排序.给定一个无序数组，该数组被看作是 [堆(无序区) | 有序区]， 堆排序的过程就是不断交换无序区中的首尾元素（等效于弹出最大值，然后用末元素顶替根元素）， 由此堆不再合法，调用调整算法使其重新称为一个合法堆， 此番操作后有序区扩大，无序区收缩，反复这个过程，遇到空堆时算法终止· 复杂度分析: 堆中n个元素都历经交换和堆调整算法，耗时O(logn)，从而最终复杂度为 O(nlogn).]]></content>
+      <tags>
+        <tag>algos, data-structure</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[周志华《机器学习》读书笔记]]></title>
