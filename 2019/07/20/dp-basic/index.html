@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What">
+  <meta name="description" content="1. 什么是动态规划？怎样向一个四岁的小孩解释动态规划？下面是来自Quora的高票回答 How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!”">
 <meta name="keywords" content="algos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划初步">
 <meta property="og:url" content="https://hillbamboo.github.io/2019/07/20/dp-basic/index.html">
 <meta property="og:site_name" content="拿铁轮的自留地">
-<meta property="og:description" content="How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What">
+<meta property="og:description" content="1. 什么是动态规划？怎样向一个四岁的小孩解释动态规划？下面是来自Quora的高票回答 How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!”">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-21T12:26:17.595Z">
+<meta property="og:updated_time" content="2019-08-25T04:41:20.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划初步">
-<meta name="twitter:description" content="How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!” writes down another “1+” on the left* “What">
+<meta name="twitter:description" content="1. 什么是动态规划？怎样向一个四岁的小孩解释动态规划？下面是来自Quora的高票回答 How should I explain dynamic programming to a 4 year old?  writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper* “What’s that equal to?” (counting…) “Eight!”">
 
 
 
@@ -423,7 +423,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-21 20:26:17" itemprop="dateModified" datetime="2019-08-21T20:26:17+08:00">2019-08-21</time>
+                <time title="修改时间：2019-08-25 12:41:20" itemprop="dateModified" datetime="2019-08-25T12:41:20+08:00">2019-08-25</time>
               </span>
             
           
@@ -457,7 +457,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.1k</span>
+              <span title="本文字数">1.8k</span>
             </span>
           
 
@@ -469,7 +469,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span title="阅读时长">3 分钟</span>
             </span>
           
 
@@ -488,7 +488,8 @@
       
 
       
-        <p>How should I explain dynamic programming to a 4 year old?</p>
+        <h1 id="什么是动态规划？">1. 什么是动态规划？</h1><p>怎样向一个四岁的小孩解释动态规划？下面是来自Quora的高票回答</p>
+<p>How should I explain dynamic programming to a 4 year old?</p>
 <blockquote>
 <p>writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper*</p>
 <p>“What’s that equal to?”</p>
@@ -500,8 +501,7 @@
 <p>“You just added one more”</p>
 <p>“So you didn’t need to recount because you remembered there &gt; were eight! Dynamic Programming is just a fancy way to say &gt; ‘remembering stuff to save time later’”</p>
 </blockquote>
-<p>三大算法思路: 搜索，贪心，dp，分治</p>
-<p>fib数列<br>青蛙跳<br>变态青蛙跳<br>挖金矿<br>花瓶美学<br>数字三角形<br>背包九问<br>最长公共子序列<br>单源最短路径问题</p>
+<p>下面的讲解是来自知乎的高票回答：</p>
 <blockquote>
 <p>当你企图使用计算机解决一个问题是，其实就是在思考如何将这个问题表达成状态（用哪些变量存储哪些数据）以及如何在状态中转移（怎样根据一些变量计算出另一些变量）。所以所谓的空间复杂度就是为了支持你的计算所必需存储的状态最多有多少，所谓时间复杂度就是从初始状态到达最终状态中间需要多少步！</p>
 <p>每个阶段只有一个状态-&gt;递推</p>
@@ -509,12 +509,15 @@
 <p>每个阶段的最优状态是由之前所有阶段的状态的组合得到的-&gt;搜索</p>
 <p>每个阶段的最优状态可以从之前某个阶段的某个或某些状态直接得到而不管之前这个状态是如何得到的-&gt;动态规划。</p>
 </blockquote>
-<p>三要素</p>
+<h1 id="动态规划-形式化讲解">2. 动态规划: 形式化讲解</h1><p>动态规划的三兄弟：</p>
 <ul>
 <li>最优子结构</li>
-<li>状态转移方程</li>
-<li>边界</li>
+<li>重叠子问题</li>
+<li>无后效性</li>
 </ul>
+<p>最优子结构是指原问题的最优解包含子问题的最优解，例如，求解斐波那契数列fib(n) = fib(n - 1) + fib(n - 2), 第n项斐波那契数必包含第n-1项和第n-2项斐波那契数。就我的经验而言，刻画最优子结构往往是最难的，我常常会因为找错了最优子结构而写错了DP转移方程。像斐波那契数，跳台阶，0-1背包等这种简单的问题，最优子结构很容易刻画，因为当前状态(i,j) 仅依赖于很少的的几个先前的状态，从而状态转移方程是很容易写出来的。然而，常常问题一复杂，其中牵涉的状态较多时，状态转移会变得很复杂，很容易把子问题想错，或者想漏了。在刻画最优子结构时，<em>必须</em>考察完全其最优解需要的<em>所有</em>子问题，做到<em>不重不漏</em>。</p>
+<p>还有一点，考虑当前状态(i, j)是从先前的哪些状态转移过来时，是一个决策的过程，所有容许的可能决策构成一个<em>允许决策集</em>，这个集合是由原问题给出的，也是由怎样去设计状态所决定的，并不是自己空想的、臆造的。</p>
+<p>重叠子问题是指将原问题分解成许多的子问题后，这些子问题都是相互关联的，有所重叠的，这样使用DP才会加速计算。如果发现问题存在大量的重叠子问题，该问题就很有可能能用DP来解。这点也是DP和分治的显著区别，如果子问题是独立的，直接用分支就能解，也就无所谓DP不DP。例如对于排序问题，将其分解为左右两个子段的排序问题，求解这两个子问题是相互独立的，从而这里并不存在重叠子问题。</p>
 <p>四步走</p>
 <ol>
 <li>划分阶段</li>
@@ -533,7 +536,9 @@
 <li>考虑一般情况， 如规模为i的问题已解决，如何基于此求解规模为i+1的问题</li>
 </ol>
 <p>1-&gt;2-&gt;3-&gt;4, 1-&gt;4-&gt;2-&gt;3</p>
-<h1 id="参考资源">1. 参考资源</h1><p><a href="https://www.quora.com/How-should-I-explain-dynamic-programming-to-a-4-year-old" target="_blank" rel="noopener"><i class="fa fa-book"></i> How should I explain dynamic programming to a 4-year-old?</a></p>
+<h1 id="例题讲解">3. 例题讲解</h1><p>三大算法思路: 搜索，贪心，dp，分治</p>
+<p>fib数列<br>青蛙跳<br>变态青蛙跳<br>挖金矿<br>花瓶美学<br>数字三角形<br>背包九问<br>最长公共子序列<br>单源最短路径问题</p>
+<h1 id="参考资源">4. 参考资源</h1><p><a href="https://www.quora.com/How-should-I-explain-dynamic-programming-to-a-4-year-old" target="_blank" rel="noopener"><i class="fa fa-book"></i> How should I explain dynamic programming to a 4-year-old?</a></p>
 <p><a href="https://www.zhihu.com/question/23995189/answer/35429905" target="_blank" rel="noopener"><i class="fa fa-book"></i> 知乎</a></p>
 <p><a href="https://www.zhihu.com/question/39948290/answer/612439961" target="_blank" rel="noopener"><i class="fa fa-book"></i> 知乎</a></p>
 <p><a href="https://www.cnblogs.com/caiyishuai/p/9047991.html" target="_blank" rel="noopener"><i class="fa fa-book"></i> 知乎</a></p>
@@ -821,7 +826,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-text">1. 参考资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是动态规划？"><span class="nav-text">1. 什么是动态规划？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态规划-形式化讲解"><span class="nav-text">2. 动态规划: 形式化讲解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例题讲解"><span class="nav-text">3. 例题讲解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资源"><span class="nav-text">4. 参考资源</span></a></li></ol></div>
             
 
           </div>
@@ -863,7 +868,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -872,7 +877,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">38 分钟</span>
   
 </div>
 
@@ -1393,6 +1398,46 @@ show_date_time();
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

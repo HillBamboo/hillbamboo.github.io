@@ -64,7 +64,7 @@
     <link href="https://hillbamboo.github.io/2019/08/04/binary-index-tree/"/>
     <id>https://hillbamboo.github.io/2019/08/04/binary-index-tree/</id>
     <published>2019-08-04T01:28:27.000Z</published>
-    <updated>2019-08-21T12:20:58.461Z</updated>
+    <updated>2019-09-12T12:12:00.587Z</updated>
     
     <summary type="html">
     
@@ -109,16 +109,15 @@
     <link href="https://hillbamboo.github.io/2019/07/20/dp-basic/"/>
     <id>https://hillbamboo.github.io/2019/07/20/dp-basic/</id>
     <published>2019-07-20T11:33:29.000Z</published>
-    <updated>2019-08-21T12:26:17.595Z</updated>
+    <updated>2019-08-25T04:41:20.622Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;How should I explain dynamic programming to a 4 year old?&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper*&lt;/p&gt;
-&lt;p
+        &lt;h1 id=&quot;什么是动态规划？&quot;&gt;1. 什么是动态规划？&lt;/h1&gt;&lt;p&gt;怎样向一个四岁的小孩解释动态规划？下面是来自Quora的高票回答&lt;/p&gt;
+&lt;p&gt;How should I explain dynamic programming to a 4 year old?&lt;/p&gt;
+&lt;
       
     
     </summary>
@@ -147,18 +146,18 @@
   </entry>
   
   <entry>
-    <title>learn-xgb</title>
+    <title>XGB</title>
     <link href="https://hillbamboo.github.io/2019/06/01/learn-xgb/"/>
     <id>https://hillbamboo.github.io/2019/06/01/learn-xgb/</id>
     <published>2019-06-01T08:23:53.000Z</published>
-    <updated>2019-08-22T09:20:55.909Z</updated>
+    <updated>2019-08-22T14:08:41.347Z</updated>
     
     <summary type="html">
     
       
       
         &lt;p&gt;GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本&lt;/p&gt;
-&lt;h2 id=&quot;基本推导&quot;&gt;0.1. 基本推导&lt;/h
+&lt;h1 id=&quot;基本推导&quot;&gt;1. 基本推导&lt;/h1&gt;
       
     
     </summary>

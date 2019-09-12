@@ -94,17 +94,17 @@
 
 
 
-  <meta name="description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 0.1. 基本推导GBDT的基本形式：  0.2. XGB  J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\ri">
+  <meta name="description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 1. 基本推导GBDT的基本形式：  2. XGB J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\right)w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="learn-xgb">
+<meta property="og:title" content="XGB">
 <meta property="og:url" content="https://hillbamboo.github.io/2019/06/01/learn-xgb/index.html">
 <meta property="og:site_name" content="拿铁轮的自留地">
-<meta property="og:description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 0.1. 基本推导GBDT的基本形式：  0.2. XGB  J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\ri">
+<meta property="og:description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 1. 基本推导GBDT的基本形式：  2. XGB J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\right)w">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-22T09:20:55.909Z">
+<meta property="og:updated_time" content="2019-08-22T14:08:41.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="learn-xgb">
-<meta name="twitter:description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 0.1. 基本推导GBDT的基本形式：  0.2. XGB  J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\ri">
+<meta name="twitter:title" content="XGB">
+<meta name="twitter:description" content="GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本 1. 基本推导GBDT的基本形式：  2. XGB J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\right)w">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>learn-xgb | 拿铁轮的自留地</title>
+  <title>XGB | 拿铁轮的自留地</title>
   
 
 
@@ -381,7 +381,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">learn-xgb
+          <h2 class="post-title" itemprop="name headline">XGB
 
               
             
@@ -422,7 +422,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-22 17:20:55" itemprop="dateModified" datetime="2019-08-22T17:20:55+08:00">2019-08-22</time>
+                <time title="修改时间：2019-08-22 22:08:41" itemprop="dateModified" datetime="2019-08-22T22:08:41+08:00">2019-08-22</time>
               </span>
             
           
@@ -456,7 +456,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">666</span>
+              <span title="本文字数">664</span>
             </span>
           
 
@@ -488,17 +488,15 @@
 
       
         <p>GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本</p>
-<h2 id="基本推导">0.1. 基本推导</h2><p>GBDT的基本形式： </p>
-<h2 id="XGB">0.2. XGB</h2><script type="math/tex; mode=display">
-
+<h1 id="基本推导">1. 基本推导</h1><p>GBDT的基本形式： </p>
+<h1 id="XGB">2. XGB</h1><script type="math/tex; mode=display">
 J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\right)w_j + \frac{1}{2}\left(\sum_{i \in I_j}h_i + \lambda \right)w_j^2 \right] + \gamma T \\ 
 = \sum_{j \in T}\left[G_jw_j + \frac{1}{2}\left(H_j + \lambda \right)w_j^2 \right] + \gamma T</script><p>其中 G_j 是落入第\(j\)个叶节点的样本一阶梯度之和， H_j 是落入第\(j\)个叶节点的样本的二阶梯度之和，<br>对于式</p>
 <script type="math/tex; mode=display">
-G_jw_j + \frac{1}{2}\left(H_j + \lambda \right)w_j^2</script><script type="math/tex; mode=display">w_j</script><p>相当于自变量</p>
-<script type="math/tex; mode=display">x</script><p>从而 </p>
-<script type="math/tex; mode=display">w_j = -\frac{G_i}{H_j + \lambda}$$ 时该式取得最小值，将其带入目标函数中，得到
-
-$$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gamma T</script><h2 id="参考资料">0.3. 参考资料</h2><ol>
+G_jw_j + \frac{1}{2}\left(H_j + \lambda \right)w_j^2</script><p>$w_j$相当于自变量$x$，从而 </p>
+<script type="math/tex; mode=display">
+w_j = -\frac{G_i}{H_j + \lambda}</script><p>时该式取得最小值，将其带入目标函数中，得到</p>
+<script type="math/tex; mode=display">J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gamma T</script><h1 id="参考资料">3. 参考资料</h1><ol>
 <li><a href="https://zhuanlan.zhihu.com/p/30339807" target="_blank" rel="noopener">GBDT的原理和应用</a></li>
 </ol>
 
@@ -568,7 +566,7 @@ $$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gam
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://hillbamboo.github.io/2019/06/01/learn-xgb/" title="learn-xgb">https://hillbamboo.github.io/2019/06/01/learn-xgb/</a>
+    <a href="https://hillbamboo.github.io/2019/06/01/learn-xgb/" title="XGB">https://hillbamboo.github.io/2019/06/01/learn-xgb/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC</a> 许可协议。转载请注明出处！</li>
@@ -776,7 +774,7 @@ $$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gam
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本推导"><span class="nav-text">0.1. 基本推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGB"><span class="nav-text">0.2. XGB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">0.3. 参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本推导"><span class="nav-text">1. 基本推导</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XGB"><span class="nav-text">2. XGB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-text">3. 参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -818,7 +816,7 @@ $$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gam
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">23k</span>
   
 
   
@@ -827,7 +825,7 @@ $$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gam
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">38 分钟</span>
   
 </div>
 
