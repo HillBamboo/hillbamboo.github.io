@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hillbamboo.github.io/"/>
-  <updated>2019-08-21T12:26:25.804Z</updated>
+  <updated>2019-12-09T15:24:44.540Z</updated>
   <id>https://hillbamboo.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C++多线程同步与互斥基本原语</title>
+    <link href="https://hillbamboo.github.io/2019/12/09/cxx-thread-sync/"/>
+    <id>https://hillbamboo.github.io/2019/12/09/cxx-thread-sync/</id>
+    <published>2019-12-09T15:19:26.000Z</published>
+    <updated>2019-12-09T15:24:44.540Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;为什么要进行多线程编程&quot;&gt;1. 为什么要进行多线程编程&lt;/h1&gt;&lt;p&gt;无他，更快。&lt;/p&gt;
+&lt;h1 id=&quot;多线程编程中的难点&quot;&gt;2. 多线程编程中的难点&lt;/h1&gt;&lt;p&gt;在多线程编程环境下，计算顺序的不确定性是一个本质问题。而多线程编程的难点在于&lt;/p&gt;
+&lt;ol&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Git for Windows 无法显示中文</title>
@@ -434,26 +455,6 @@
 &lt;li&gt;忽略无关方面&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;封装：-信息隐藏技术&quot;&gt;3. 封装： 信息隐藏技术&lt;/h1&gt;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象程序设计-JAVA 学习笔记01</title>
-    <link href="https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/"/>
-    <id>https://hillbamboo.github.io/2017/05/01/zju-java-notes-01/</id>
-    <published>2017-05-01T11:07:43.000Z</published>
-    <updated>2019-07-17T06:57:49.840Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;对象交互&quot;&gt;1. 对象交互&lt;/h1&gt;&lt;h2 id=&quot;面向对象的设计思想&quot;&gt;1.1. 面向对象的设计思想&lt;/h2&gt;&lt;p&gt;看问题域中包含哪些对象，他们之间的交互行为是怎样的&lt;br&gt;例子：数字时钟&lt;/p&gt;
-&lt;h2 id=&quot;关于private-public&quot;&gt;1.2. 关
       
     
     </summary>
