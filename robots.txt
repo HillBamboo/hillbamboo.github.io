@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://hillbamboo.github.io/sitemap.xml

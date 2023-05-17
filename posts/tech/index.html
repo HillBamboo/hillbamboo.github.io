@@ -1,0 +1,293 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>技术 | hill's blog</title>
+<meta name=keywords content>
+<meta name=description content="技术 - hill's blog">
+<meta name=author content="Me">
+<link rel=canonical href=https://hillbamboo.github.io/posts/tech/>
+<meta name=google-site-verification content="XYZabc">
+<meta name=yandex-verification content="XYZabc">
+<meta name=msvalidate.01 content="XYZabc">
+<link crossorigin=anonymous href=/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://hillbamboo.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=16x16 href=https://hillbamboo.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=icon type=image/png sizes=32x32 href=https://hillbamboo.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=apple-touch-icon href=https://hillbamboo.github.io/%3Clink%20/%20abs%20url%3E>
+<link rel=mask-icon href=https://hillbamboo.github.io/%3Clink%20/%20abs%20url%3E>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<link rel=alternate type=application/rss+xml href=https://hillbamboo.github.io/posts/tech/index.xml>
+<link rel=stylesheet href=css/all.min.css>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="技术">
+<meta property="og:description" content="ExampleSite description">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hillbamboo.github.io/posts/tech/"><meta property="og:image" content="https://hillbamboo.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="随便取的名字啊">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://hillbamboo.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
+<meta name=twitter:title content="技术">
+<meta name=twitter:description content="ExampleSite description">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://hillbamboo.github.io/posts/"},{"@type":"ListItem","position":2,"name":"技术","item":"https://hillbamboo.github.io/posts/tech/"}]}</script>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://hillbamboo.github.io/ accesskey=h title="Hill's Blog (Alt + H)">
+<img src=https://hillbamboo.github.io/apple-touch-icon.png alt aria-label=logo height=35>Hill's Blog</a>
+<div class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</div>
+</div>
+<ul id=menu>
+<li>
+<a href=https://hillbamboo.github.io/posts title=📚文章>
+<span>📚文章</span>
+</a>
+</li>
+<li>
+<a href=https://hillbamboo.github.io/archives/ title=⏱归档>
+<span>⏱归档</span>
+</a>
+</li>
+<li>
+<a href=https://hillbamboo.github.io/tags title=🔖标签>
+<span>🔖标签</span>
+</a>
+</li>
+<li>
+<a href=https://hillbamboo.github.io/about title=🙋🏻‍♂️关于>
+<span>🙋🏻‍♂️关于</span>
+</a>
+</li>
+<li>
+<a href=https://hillbamboo.github.io/search title="🔍搜索 (Alt + /)" accesskey=/>
+<span>🔍搜索</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header>
+<h1>
+技术
+<a href=index.xml title=RSS aria-label=RSS><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="23"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a>
+</h1>
+</header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>基于词频的中文分词
+</h2>
+</header>
+<div class=entry-content>
+<p>问题定义 给定数组arr，长度T，其中某些arr[i]到arr[j]存在转移概率，将arr分成k组，使得arr的整体分组和最大。 对于arr的每一个子数组arr[i..j]，其分组值定义为 arr[i]到arr[j]的转移概率 arr的分组和是其每一个子数组的分组值之和
+问题求解 正向定义 定义数据g[i]为arr[0..i]的最大分组和 在g[j], 0 &lt;= j &lt; i已知的前提下，将 arr[j .. i] 分成一组，则g[i] = g[j] + trans[j, i] ，所以 $$g[i] = max(g[j] + trans(j, i)), 0 \le j &lt; i$$ g[T - 1]即为所求。
+反向定义 定义数据g[i]为arr[i..T-1]的最大分组和，其余定义与正向定义类似
+说明 jieba/init.py中的Tokenizer.calc与wordseg/ViterbiCWS.py中的ViterbiSearch的实现是等价的，均可实现序列的最大分组，不同点在于
+DAG的定义不同 如对于句子"学生会主动完成作业"， {0: [0, 1, 2], 1: [1], 2: [2, 3], 3: [3, 4], 4: [4], 5: [5, 6], 6: [6], 7: [7, 8], 8: [8]} # jieba {0: [0], 1: [0, 1], 2: [0, 2], 3: [3], 4: [3, 4], 5: [5], 6: [5, 6], 7: [7], 8: [7, 8]} # ViterbiSearch 用于实现DP的状态定义不同 jieba使用的正向定义，ViterbiSearch使用的是反向定义 代码实现 使用反向定义，实现逻辑与ViterbiSearch一致。 可以尝试提升“学生会”的词频，使得cut能且分出“学生会”。 或者提升 长江大桥 的词频，使得cut能切分出 “长江大桥”
+freq = { "学生": 400, "学生会": 20, "完成": 500, "作业": 300, "主动": 400, "学": 10, "生": 10, "会": 20, "主": 50, "动": 10, "完": 100, "成": 55, "作": 40, "业": 5, "大桥": 20, "南京": 60, "南京市": 30, "市长": 40, "江大桥": 888, "长江大桥": 666, "南": 10, "京": 40, "市": 6, "长": 7, "江": 50, "大": 5, "桥": 40, } total = 3000 def build_dag(sentence: str) -> dict: """ 构建以每个token结尾的有向词图 如 "学生会主动完成作业" => {0: [0], 1: [0, 1], 2: [0, 2], 3: [3], 4: [3, 4], 5: [5], 6: [5, 6], 7: [7], 8: [7, 8]} :param sentence: :return: """ n = len(sentence) dag = { i: [j for j in range(i + 1) if freq....</p>
+</div>
+<a class=entry-link aria-label="post link to 基于词频的中文分词" href=https://hillbamboo.github.io/posts/tech/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E9%A2%91%E7%9A%84%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>[Leetcode每日打卡]二叉搜索树迭代器
+</h2>
+</header>
+<div class=entry-content>
+<p>原题描述 二叉搜索树迭代器
+思路 模拟法。 用O(n)空间的数组保存中序遍历的结果，使用指针start保存当前迭代器所处的下标。
+class BSTIterator { public: vector&lt;int> vals; int len = 0; int start = -1; void _build(TreeNode* root) { if (!root) return; if (root->left) _build(root->left); vals.push_back(root->val); ++len; if (root->right) _build(root->right); } BSTIterator(TreeNode* root) { _build(root); } int next() { return vals[++start]; } bool hasNext() { return start + 1 &lt; len; } }; 运行结果 执行用时：28 ms, 击败 91.85% 的用户 内存消耗：23.6 MB，超过 45.59% 的用户 </p>
+</div>
+<a class=entry-link aria-label="post link to [Leetcode每日打卡]二叉搜索树迭代器" href=https://hillbamboo.github.io/posts/tech/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E8%BF%AD%E4%BB%A3%E5%99%A8/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>C++多线程同步与互斥基本原语
+</h2>
+</header>
+<div class=entry-content>
+<p>为什么要进行多线程编程 无他，更快。
+多线程编程中的难点 在多线程编程环境下，计算顺序的不确定性是一个本质问题。而多线程编程的难点在于
+线程互斥。解决数据争用的问题。多线程编程下（同一进程的）各线程共享的全局对象，由于操作系的抢占式任务调度调度方式会造成计算顺序的混乱，具体来说就是实际运行顺序并不是程序所期待的顺序。 线程同步。将一个大任务拆分为多个小任务（线程）后，小任务之间是需要通过某种方式组织起来还原会大任务的。具体来说，小任务之间是通过一个有向无环图组织起来的，其中某些小任务需要等待另外一些小任务的完成，否则无法继续。 如何解决线程互斥问题 在C++中，解决线程互斥（问题1）的方式有：
+lock_gurad/unique_lock + mutex semaphore = mutex + condition_variable + int_cnt atomic 解决问题2的方式有：
+condition_variable 解决数据争用问题 加锁操作 使用lock_gurad/unique_lock + mutex可实现异常安全的加锁操作。
+单纯使用mutex的.lock()和.unlock()方法不是异常安全的。如每一个线程要完成run()这样一个计算任务：
+mutex m; void run(int a, int b, int c) { m.lock(); int d = a + b / c; m.unlock(); } 这里使用的.lock()与.unlock()划定了一个临界区。若临界区中的计算抛异常了，就无法执行.unlock()语句。从而，mutex永远被锁上了。
+上述问题的解决知道就是使用RAII手法，利用lock_guard/unique_lock持有mutex对象。lock_guard中的构造函数调用了.lock()，析构函数实现了.unlock()，从而使用lock_guard/unique_lock + mutex可实现异常安全的锁操作。具体代码如下：
+mutex m; void run(int a, int b, int c) { lock_guard&lt;mutex> l(m) int d = a + b / c; } 跨线程安全的资源计数 信号量实现了这样的功能：
+获得一个资源，资源计数器减1 释放一个资源，资源计数器加1 没有资源可以获得，线程阻塞等待 C++原生不支持信号量，可以通过lock_guard/unique_lock + mutex + int_cnt手动实现一个。具体代码如下：
+class Semaphore { private: mutex mMutex; condition_variable mCondVar; int64_t mAvailable; public: explicit Semaphore(int64_t init) : mAvailable(init) {} void post() { { unique_lock&lt;mutex> l(mMutex); // do computation ++mAvailable; } mCondVar.notify_one(); } void wait() { unique_lock&lt;mutex> l(mMutex); while (mAvailable == 0) { mCondVar.wait(l); } --mAvailable; } }; 原子操作 c++的标准库atomic可实现原子操作。 todo...</p>
+</div>
+<a class=entry-link aria-label="post link to C++多线程同步与互斥基本原语" href=https://hillbamboo.github.io/posts/tech/cxx-thread-sync/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Git for Windows 无法显示中文
+</h2>
+</header>
+<div class=entry-content>
+<p>git for windows 无法显示中文，这个问题之前碰到过两次。现记录解决方案如下：
+git config --global core.quotepath false git config --global gui.encoding utf-8 git config --global i18n.commit.encoding utf-8 git config --global i18n.logoutputencoding utf-8 export LESSCHARSET=utf-8 参考资料
+解决 Git 在 windows 下中文乱码的问题</p>
+</div>
+<a class=entry-link aria-label="post link to Git for Windows 无法显示中文" href=https://hillbamboo.github.io/posts/tech/git-cannot-display-chinese/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>树状数组: 小而美的数据结构
+</h2>
+</header>
+<div class=entry-content>
+<p>问题描述 动态前缀和维护问题。给定一个区间 $A[1..n]$, 对该区间进行如下两类操作
+(前缀和查询)指定$1 \le j \le n$, 求$A[1..j]$的前缀和 (单点修改)指定$1 \le j \le n$, 令A[j] += val 分析。该问题可以通过前缀数组$arr[1..n]$完成，空间复杂度是$O(n)$, 操作一的时间复杂度是$O(1)$, 操作二的时间是$O(n)$, 最坏情况是$j = n$时整个$arr[1..n]$均需要更新。树状数组能够把操作一和操作二的时间复杂度都降至$O(\log n)$, 空间是$O(n)$.
+树状数组 树状数组是一类巧妙利用了二进制的数据结构. 在动态前缀和维护问题中，输入$1 \le j \le n$, 若我们能从二进制的观点来看待$j$, 则$j$至多有$\log n$位. 举例, 易知
+$$j = 13_{10} = 1101_{2} = 8 + 4 + 1$$
+从而求数组的$A$的前13项之和可以分成三步:
+$$A[1..13] = A[1..8] + A[9..12] + A[13]$$
+注意区间$A[1..8], A[9..12], A[13]$的区间大小分别就是8, 4, 1, 这对应了13的进制分解. 我们记
+$$c[8] = A[1..8], c[12] = A[9..12], c[13] = A[13]$$
+则若我们知道了数组$c[1..n]$, 则前缀和可以在$O(\log n)$时间内完成. 数组$c[1..n]$被称为树状数组.
+树状数组的含义 在此之前, 首先我们来明确一下$c[j]$的含义，他是指以$A[j]$结尾的往前一段区间的和, 为了方便我们称这一段区间为$c[j]$的前缀区间. $c[j]$的前缀区间有多长？如下:
+$$\left| c[j] \right| = j\ &\ (-j) $$
+其中符号$&$表示按位与. 上式的实际意义是指$j$的二进制表示中最右边的1所占的权重. 举例，如$12_{10} = 1100_{2} = 8 + 4, 4 = 12\ & \ (-12)$, 则$c[12]$的前缀区间长度是4, 同理$\left | c[13] \right | = 1, \left | c[8] \right | = 8, \left | c[2] \right | = 2$. 可以看出规律，凡是$j$是2的幂次形式是$c[j]$的前缀区间长度总是j, 这是因为此时j仅有一个1.
+前缀和查询 首先来考察操作一:前缀和查询操作. 给定$1 \le j \le n$, 怎样使用$c[1..n]$计算得到$A[1..n]$? 仍然以$j = 13$举例,...</p>
+</div>
+<a class=entry-link aria-label="post link to 树状数组: 小而美的数据结构" href=https://hillbamboo.github.io/posts/tech/binary-index-tree/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>三行并查集
+</h2>
+</header>
+<div class=entry-content>
+<p>tags algos data-structure
+三行并查集 并查集是一种简洁而优雅的数据结构，能够在O(1)的时间内实现对集合的查询和合并操作。
+并查集的代码十分简洁，总共就三行
+Init(n) { for(int i = 0; i &lt; n; ++i) root[i] = i;} Find(x) { return x == root[x] ? x : root[x] = find(root[x]); } Union(x, y) {root[find(x)] = find(y); } 其中root[i]表示元素i的父节点
+路径压缩 注意Find函数中使用的是递归调用, 其中将递归调用后得返回值重新赋值给root[x], 这是做法称为 路径压缩, 为了防止反复对集合进行合并后并查集退化成一条链，从而时间复杂度退化成线性时间所做的优化，注意无路径压缩的写法如下
+x == root[x] ? x : find(root[x]) 这c/c++用这种写法很OK，但是用python写，最少都要用两行
+if root[x] != x: root[x] = find(root[x]) return root[x] 用下面的这种写法是不行的:
+return x if root[x] == x else root[x] = find(root[x]) 此外，路径压缩自然可以改写成非递归形式，做法很简单，下文略。
+按秩归并 Union操作还可以进行按秩归并的优化. 首先介绍集合的rank的概念。 在并查集中，一个集合用一棵树表示，这棵树的深度就是该集合的rank，树越深rank越大. 容易知道rank越低find操作越高效，这也是路径压缩所追求的。按秩归并的思路是将rank低的集合并入到rank高的集合，这样可以延缓并查集变成一条链的情形，从而提高Find的效率. 若不是将小rank集合归如大rank结合，合并后的新集合的rank总会增长，最终rank=集合元素个数时，find操作是线性的。注意，为了实现按秩归并，我们仅需要多维护一个rank数组即可，足够简单。
+加上了按秩归并优化的Union函数长成下面这个样子
+void Union(x, y) { int xr = find(x), yr = find(y); if (rank[xr] &lt;= rank[yr]) { root[xr] = yr; if (rank[xr] == rank[yr]) ++rank[yr]; } else root[yr] = xr; 按秩归并算法多了几行，为了偷懒有时随便Union也OK. 不超时就好. 讲究一点的就按秩归并吧.
+练习题 leetcode 200 leetcode 547 leetcode 684 leetcode 959 leetcode 990 后续 可持久化并查集？等我学会了再写吧~~~</p>
+</div>
+<a class=entry-link aria-label="post link to 三行并查集" href=https://hillbamboo.github.io/posts/tech/disjoin-set/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>动态规划初步
+</h2>
+</header>
+<div class=entry-content>
+<p>什么是动态规划？ 怎样向一个四岁的小孩解释动态规划？下面是来自Quora的高票回答
+How should I explain dynamic programming to a 4 year old?
+writes down “1+1+1+1+1+1+1+1 =” on a sheet of paper*
+“What’s that equal to?”
+(counting…) “Eight!”
+writes down another “1+” on the left*
+“What about that?”
+(quickly…) “Nine!”
+“How’d you know it was nine so fast?”
+“You just added one more”
+“So you didn’t need to recount because you remembered there > were eight! Dynamic Programming is just a fancy way to say > ‘remembering stuff to save time later’”
+下面的讲解是来自知乎的高票回答：
+当你企图使用计算机解决一个问题是，其实就是在思考如何将这个问题表达成状态（用哪些变量存储哪些数据）以及如何在状态中转移（怎样根据一些变量计算出另一些变量）。所以所谓的空间复杂度就是为了支持你的计算所必需存储的状态最多有多少，所谓时间复杂度就是从初始状态到达最终状态中间需要多少步！
+每个阶段只有一个状态->递推
+每个阶段的最优状态都是由上一个阶段的最优状态得到的->贪心
+每个阶段的最优状态是由之前所有阶段的状态的组合得到的->搜索
+每个阶段的最优状态可以从之前某个阶段的某个或某些状态直接得到而不管之前这个状态是如何得到的->动态规划。
+动态规划: 形式化讲解 动态规划的三兄弟：
+最优子结构 重叠子问题 无后效性 最优子结构是指原问题的最优解包含子问题的最优解，例如，求解斐波那契数列fib(n) = fib(n - 1) + fib(n - 2), 第n项斐波那契数必包含第n-1项和第n-2项斐波那契数。就我的经验而言，刻画最优子结构往往是最难的，我常常会因为找错了最优子结构而写错了DP转移方程。像斐波那契数，跳台阶，0-1背包等这种简单的问题，最优子结构很容易刻画，因为当前状态(i,j) 仅依赖于很少的的几个先前的状态，从而状态转移方程是很容易写出来的。然而，常常问题一复杂，其中牵涉的状态较多时，状态转移会变得很复杂，很容易把子问题想错，或者想漏了。在刻画最优子结构时，必须考察完全其最优解需要的所有子问题，做到不重不漏。
+还有一点，考虑当前状态(i, j)是从先前的哪些状态转移过来时，是一个决策的过程，所有容许的可能决策构成一个允许决策集，这个集合是由原问题给出的，也是由怎样去设计状态所决定的，并不是自己空想的、臆造的。
+重叠子问题是指将原问题分解成许多的子问题后，这些子问题都是相互关联的，有所重叠的，这样使用DP才会加速计算。如果发现问题存在大量的重叠子问题，该问题就很有可能能用DP来解。这点也是DP和分治的显著区别，如果子问题是独立的，直接用分支就能解，也就无所谓DP不DP。例如对于排序问题，将其分解为左右两个子段的排序问题，求解这两个子问题是相互独立的，从而这里并不存在重叠子问题。
+四步走
+划分阶段 确定状态 寻找最优子结构 (从特例出发考虑最优子结构) 考虑最优子结构的一般情况，注意考虑周全 写出状态转移方程和边界情况(平凡/退化情况), 注意边界不要写漏 三步走
+划分阶段 考虑平凡情况，如当数组长度为0时 考虑一般情况， 如规模为i的问题已解决，如何基于此求解规模为i+1的问题 1->2->3->4, 1->4->2->3
+例题讲解 三大算法思路: 搜索，贪心，dp，分治
+fib数列 青蛙跳 变态青蛙跳 挖金矿 花瓶美学 数字三角形 背包九问 最长公共子序列 单源最短路径问题...</p>
+</div>
+<a class=entry-link aria-label="post link to 动态规划初步" href=https://hillbamboo.github.io/posts/tech/dp-basic/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>机器学习算法: 朴素贝叶斯篇
+</h2>
+</header>
+<div class=entry-content>
+<p>朴素贝叶斯是一类很简单的分类算法, 应用场景较多, 如垃圾邮件分类, 输入法中的拼写检查, 文本情感分类等等. 初学朴素贝叶斯时被"朴素"二字迷惑, 认为之所以称之为 “朴素” 时因为算法很 “简单”, 很naive. 实际上, “朴素” 更准确的含义是（特征间的）条件独立性假设, 由于这一假设使得这个算法很 “naive”, 他的引入是为了简化后验概率的计算. 学习算法不能走马观花, 浅尝辄止, 还是得花时间好好琢磨.
+贝叶斯公式 先补充贝叶斯公式作为预备知识. 贝叶斯公式形如下式： 其中$\mathbb{x}$表示样本, $c$表示类别, 贝叶斯公式给出了样本与类别之间的生成关系. 更通俗地讲, 假设给定未知样本$\mathbb{x}$, $c$的可能取值是 ${0, 1, 2, \cdots, k}$, 则概率
+$$Pr(c=j|\mathbb{x}) = \frac{Pr(\mathbb{x}|c=j) \times Pr(c = j)}{Pr(\mathbb{x})}, \ j=0, 1, \cdots, k$$
+朴素贝叶斯算法 朴素贝叶斯模型是一类生成模型, 它的生成关系有贝叶斯公式给出, 模型的训练是通过最大化后验概率实现的.
+模型假设 朴素贝叶斯算法的前提假设是特征之间的条件独立性, 即： 给定样本$\mathbb{x}=(x_1, x_2, \cdots, x_n)$, 其中$x_i$为第$i$个特征, 则
+$$Pr(\mathbb{x}|c=j) = Pr(c=j) \times \prod\limits_{i}Pr(x_i|c=j)$$
+算法推导 由贝叶斯公式可知
+$$Pr(c=j|\mathbb{x}) = \frac{Pr(\mathbb{x}|c=j) \times Pr(c = j)}{Pr(\mathbb{x})}, \ j=0, 1, \cdots, k$$
+由于对于同一个样本, $Pr(\mathbb{x})$取值总是相同的, 从而
+$$ \begin{aligned} j^{*} &= \mathop{\arg\max}\limits_{j} \frac{Pr(c = j) \times \prod\limits_{i}Pr(x_i|c = j)}{Pr(\mathbb{x})} \ & = \mathop{\arg\max}\limits_{j} Pr(c = j) \times \prod\limits_{i}Pr(x_i|c = j) \end{aligned} $$
+其中, $j^{*}$即为样本$\mathbb{x}$的预测类别
+算法流程 朴素贝叶斯算法的训练过程就是一个"计数"过程. 具体来说, 它对训练集统计下列两类概率
+先验概率（类概率） $$Pr(c = j) = \frac{\left| D_{c=j}\right|}{\left| D\right|}$$, 其中 $\left| D_{c=j}\right|$ 为数据集中的类别 $j$所占的数目, $\left| D\right|$为数据集的大小 条件概率（似然） $$ Pr(x_i|c = j) = \begin{cases} \frac{\left| D_{x_i, c=j} \right| }{\left| D_{c} \right| }, & 若\ x\ 离散, \ \frac{1}{\sigma \sqrt{2\pi}}\cdot \exp\left( -\frac{\left( x_i - \mu\right)^2}{2\sigma^2}\right), & 若\ x\ 连续, \end{cases} $$ 其中$\left| D_{x_i, c=j} \right|$为类别是$j$且取值为$x_i$的样本数量....</p>
+</div>
+<a class=entry-link aria-label="post link to 机器学习算法: 朴素贝叶斯篇" href=https://hillbamboo.github.io/posts/tech/naive-bayes/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>XGB
+</h2>
+</header>
+<div class=entry-content>
+<p>GBDT是一个加法模型，其基模型是决策树，所以名字中带着DT，使用的优化方式是梯度提升，所以名字中带有GB. GDBT类模型如xgb, lgb, catboost, thunderboost都是GBDT的改进版本
+基本推导 GBDT的基本形式：
+XGB $$ J^{(t-1)} = \sum_{j \in T}\left[\left( \sum_{i \in I_j} g_i\right)w_j + \frac{1}{2}\left(\sum_{i \in I_j}h_i + \lambda \right)w_j^2 \right] + \gamma T \ = \sum_{j \in T}\left[G_jw_j + \frac{1}{2}\left(H_j + \lambda \right)w_j^2 \right] + \gamma T $$
+其中 G_j 是落入第\(j\)个叶节点的样本一阶梯度之和， H_j 是落入第\(j\)个叶节点的样本的二阶梯度之和， 对于式
+$$ G_jw_j + \frac{1}{2}\left(H_j + \lambda \right)w_j^2 $$ $w_j$相当于自变量$x$，从而 $$ w_j = -\frac{G_i}{H_j + \lambda} $$ 时该式取得最小值，将其带入目标函数中，得到
+$$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gamma T$$
+参考资料 GBDT的原理和应用 </p>
+</div>
+<a class=entry-link aria-label="post link to XGB" href=https://hillbamboo.github.io/posts/tech/learn-xgb/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Jupyterlab交互式环境配置
+</h2>
+</header>
+<div class=entry-content>
+<p>安装jupyter notebook 插件 table of content 用于为长文本生成目录 一些color scheme, background image 之类 安装jupyter lab 为jupyter lab 安装插件 pixiedust: IBM的notebook debugger 安装 jupyterlab-variableInspector 用于更快捷地观察变量, 妈妈再也不用担心我整天print变量了 </p>
+</div>
+<a class=entry-link aria-label="post link to Jupyterlab交互式环境配置" href=https://hillbamboo.github.io/posts/tech/setup-jupyterlab-interactive-computational-envs/></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=next href=https://hillbamboo.github.io/posts/tech/page/2/>Next&nbsp;&nbsp;»
+</a>
+</nav>
+</footer>
+</main>
+<footer class=footer>
+<span>&copy; 2023 <a href=https://hillbamboo.github.io/>hill's blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

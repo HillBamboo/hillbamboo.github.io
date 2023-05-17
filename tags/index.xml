@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on hill&#39;s blog</title>
+    <link>https://hillbamboo.github.io/tags/</link>
+    <description>Recent content in Tags on hill&#39;s blog</description>
+    <image>
+      <title>hill&#39;s blog</title>
+      <url>https://hillbamboo.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://hillbamboo.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 28 Mar 2021 16:28:26 +0000</lastBuildDate><atom:link href="https://hillbamboo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>algos</title>
+      <link>https://hillbamboo.github.io/tags/algos/</link>
+      <pubDate>Sun, 28 Mar 2021 16:28:26 +0000</pubDate>
+      
+      <guid>https://hillbamboo.github.io/tags/algos/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
