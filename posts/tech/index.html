@@ -86,6 +86,24 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>基于状态模式的状态机
+</h2>
+</header>
+<div class=entry-content>
+<p>什么是状态机 有限状态机（Finite-state machine）是一个非常有用的模型，可以模拟世界上大部分事物。 FROM JavaScript与有限状态机 - 阮一峰的网络日志
+简单来说，状态机是一张有向图
+stateDiagram-v2 direction LR [*] --> s1 s1 --> s3: e1 s1 --> s2: e2 s2 --> s1: e3 s2 --> s3: e4 状态机的基本要素 SEA模型
+State 状态。在编程中，类比于一个类、对象
+Event 事件，类比于函数签名
+Action 动作，类比于函数体、方法体
+怎样实现一个状态机？ 问题 Q： 下图是一个游戏中角色状态转换的状态图，请编程实现以下的状态机
+stateDiagram-v2 direction LR [*] --> A A --> B: "x, +100" B --> C: "x, +100" C --> A: "z, -50" B --> D: "y, +200" D --> C: "z, -50" C --> D: "x, +100" [!NOTE] 通常来说，实现一个状态模式有三种方式
+if-else方法 查表法 状态模式 if-else方法 class Context: def __init__(self): self.score = 0 def my_machine(ctx: Context, state: str, action: str) -> (Context, str): """return: (new_ctx, new_state)""" if state == "a": if action == "x": ctx.score += 100 state = "b" elif action in ("y", "z"): raise TransitionNotAllow() elif state == "b": if action == "x": ctx.score += 100 state = "c" elif action == "y": ctx....</p>
+</div>
+<a class=entry-link aria-label="post link to 基于状态模式的状态机" href=https://hillbamboo.github.io/posts/tech/%E5%9F%BA%E4%BA%8E%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%8A%B6%E6%80%81%E6%9C%BA/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>基于词频的中文分词
 </h2>
 </header>
@@ -258,16 +276,6 @@ $$J^{(t)} = -\frac{1}{2}\sum_{j=1, \cdots , T}\frac{G_j^2}{H_j + \lambda} + \gam
 参考资料 GBDT的原理和应用 </p>
 </div>
 <a class=entry-link aria-label="post link to XGB" href=https://hillbamboo.github.io/posts/tech/learn-xgb/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Jupyterlab交互式环境配置
-</h2>
-</header>
-<div class=entry-content>
-<p>安装jupyter notebook 插件 table of content 用于为长文本生成目录 一些color scheme, background image 之类 安装jupyter lab 为jupyter lab 安装插件 pixiedust: IBM的notebook debugger 安装 jupyterlab-variableInspector 用于更快捷地观察变量, 妈妈再也不用担心我整天print变量了 </p>
-</div>
-<a class=entry-link aria-label="post link to Jupyterlab交互式环境配置" href=https://hillbamboo.github.io/posts/tech/setup-jupyterlab-interactive-computational-envs/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
